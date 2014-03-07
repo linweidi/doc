@@ -1,0 +1,26 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN Digital_Timer ;
+
+SCANCHAINS 1 ;
+
+- 1
++ START PIN I_SCAN_IN
++ FLOATING Time_reg_0_ ( IN SI ) ( OUT Q )
+           Time_reg_1_ ( IN SI ) ( OUT Q )
+           Time_reg_2_ ( IN SI ) ( OUT Q )
+           down_reg ( IN SI ) ( OUT Q )
+           state_reg_1_ ( IN SI ) ( OUT QN )
+           state_reg_2_ ( IN SI ) ( OUT QN )
+           state_reg_3_ ( IN SI ) ( OUT QN )
+           state_reg_4_ ( IN SI ) ( OUT QN )
+           state_reg_5_ ( IN SI ) ( OUT QN )
+           up_reg ( IN SI ) ( OUT Q )
++ PARTITION clk_45_45
++ STOP Time_reg_3_ SI ;
+
+END SCANCHAINS
+
+END DESIGN
